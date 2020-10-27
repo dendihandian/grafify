@@ -1,2 +1,5 @@
 .venv
 .env
+
+public/css/app.css
+public/js/app.js
