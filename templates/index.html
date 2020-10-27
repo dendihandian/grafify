@@ -1,14 +1,11 @@
 {% extends 'layout/app.html' %}
 
 {% block content %}
-	{# {% for node in graph.nodes %}
-		<span>{{ node.id }}</span>,
-	{% endfor %}
+	{% include "partials/graph.html" %}
+{% endblock %}
 
-	{% for edge in graph.edges %}
-		<span>{{ edge.source }} -> {{ edge.target}}</span>,
-	{% endfor %} #}
-
-	<div id="graph-container"></div>
-
+{% block graph_data %}
+<script>
+	var graph_data = {{ graph|tojson|safe }}
+</script>
 {% endblock %}
