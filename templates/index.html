@@ -6,4 +6,14 @@
 			Welcome to Grafify
 		{% endblock %}
 	</h1>
+
+{% for node in graph.nodes %}
+	<p>{{ node.id }}</p>
+{% endfor %}
+
+{% for edge in graph.edges %}
+	<p>{{ edge.source }} -> {{ edge.target}}</p>
+{% endfor %}
+
+
 {% endblock %}

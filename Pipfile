@@ -9,6 +9,7 @@ verify_ssl = true
 flask = "*"
 python-dotenv = "*"
 autopep8 = "*"
+networkx = "*"
 
 [requires]
 python_version = "3.8"
