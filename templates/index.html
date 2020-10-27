@@ -8,11 +8,11 @@
 	</h1>
 
 {% for node in graph.nodes %}
-	<p>{{ node.id }}</p>
+	<span>{{ node.id }}</span>,
 {% endfor %}
 
 {% for edge in graph.edges %}
-	<p>{{ edge.source }} -> {{ edge.target}}</p>
+	<span>{{ edge.source }} -> {{ edge.target}}</span>,
 {% endfor %}
 
 
