@@ -1,4 +1,4 @@
-{% extends 'base.html' %}
+{% extends 'layout/app.html' %}
 
 {% block content %}
 	<h1>
@@ -7,13 +7,11 @@
 		{% endblock %}
 	</h1>
 
-{% for node in graph.nodes %}
-	<span>{{ node.id }}</span>,
-{% endfor %}
+	{% for node in graph.nodes %}
+		<span>{{ node.id }}</span>,
+	{% endfor %}
 
-{% for edge in graph.edges %}
-	<span>{{ edge.source }} -> {{ edge.target}}</span>,
-{% endfor %}
-
-
+	{% for edge in graph.edges %}
+		<span>{{ edge.source }} -> {{ edge.target}}</span>,
+	{% endfor %}
 {% endblock %}
