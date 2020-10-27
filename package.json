@@ -14,7 +14,10 @@
   "author": "Dendi Handian",
   "license": "ISC",
   "devDependencies": {
+    "browser-sync": "^2.26.13",
+    "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^7.0.2",
+    "d3": "^6.2.0",
     "laravel-mix": "^5.0.7",
     "resolve-url-loader": "3.1.0",
     "sass": "^1.27.0",

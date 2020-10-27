@@ -18,6 +18,9 @@ mix.js('resources/js/app.js', 'static/js')
     processCssUrls: false,
     postCss: [ tailwindcss('tailwind.config.js') ],
   })
+  .browserSync({
+    proxy: 'http://localhost:5000'
+  });
 
 // Full API
 // mix.js(src, output);
