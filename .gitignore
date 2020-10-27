@@ -1,5 +1,7 @@
 .venv
 .env
 
-public/css/app.css
-public/js/app.js
+node_modules
+
+static/css/app.css
+static/js/app.js
