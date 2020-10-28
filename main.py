@@ -1,3 +1,4 @@
+from datetime import datetime
 from networkx import convert, Graph, generators
 from flask import Flask, render_template
 
@@ -27,7 +28,7 @@ def home():
             'target': edge[1]
         })
 
-    return render_template('index.html', graph=graph)
+    return render_template('index.html', graph=graph, today=datetime.today())
 
 
 if __name__ == "__main__":
