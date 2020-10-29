@@ -20,16 +20,18 @@ def nx_graph_show(graph_name):
     nx_graph = graph_selector(graph_name)
 
     if (nx_graph):
-        for node in nx_graph.nodes():
-            graph['nodes'].append({
-                'id': node
-            })
+        if (graph['nodes']):
+            for node in nx_graph.nodes():
+                graph['nodes'].append({
+                    'id': node
+                })
 
-        for edge in nx_graph.edges():
-            graph['edges'].append({
-                'source': edge[0],
-                'target': edge[1]
-            })
+        if (graph['edges']):
+            for edge in nx_graph.edges():
+                graph['edges'].append({
+                    'source': edge[0],
+                    'target': edge[1]
+                })
 
     return render_template('graph.html', 
         graph=graph, 

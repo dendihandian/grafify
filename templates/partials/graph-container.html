@@ -1,6 +1,10 @@
 <div id="graph-container"></div>
 <div class="mt-4 graph-name-container text-center text-gray-500 font-bold">
-    {{ graph_name|replace("_", " ")|title }}
+    {% if networkx %}
+        {{ graph_name|replace("_", " ")|title }}
+    {% else %}
+        {{ graph_name }}
+    {% endif %}
 </div>
 <div class="pt-4 text-center">
     {% if networkx %}

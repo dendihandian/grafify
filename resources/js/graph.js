@@ -62,12 +62,13 @@ if (data) {
       .attr('height', height);
 
     const link = svg.append("g")
-        .attr("stroke", "#999")
+        .attr("stroke", edges_color)
         .attr("stroke-opacity", 0.6)
       .selectAll("line")
       .data(links)
       .join("line")
-        .attr("stroke-width", d => Math.sqrt(d.value));
+        // .attr("stroke-width", d => Math.sqrt(d.value));
+        .attr("stroke-width", edges_size);
 
     const node = svg.append("g")
         .attr("stroke", "#fff")
@@ -75,8 +76,8 @@ if (data) {
       .selectAll("circle")
       .data(nodes)
       .join("circle")
-        .attr("r", 5)
-        .attr("fill", color)
+        .attr("r", nodes_size)
+        .attr("fill", nodes_color)
         .call(drag(simulation));
 
     node.append("title")

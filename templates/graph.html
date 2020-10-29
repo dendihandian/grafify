@@ -6,10 +6,10 @@
 
 {% block graph_data %}
 <script>
-	var graph_data = {{ graph|tojson|safe }}
-	var nodes_size = {{ nodes_size }}
-	var nodes_color = {{ nodes_color }}
-	var edges_size = {{ edges_size }}
-	var edges_color = {{ edges_color }}
+	var nodes_size = "{{ nodes_size }}";
+	var nodes_color = "{{ nodes_color }}";
+	var edges_size = "{{ edges_size }}";
+	var edges_color = "{{ edges_color }}";
+	var graph_data = {{ graph|tojson|safe }};
 </script>
 {% endblock %}
