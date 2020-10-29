@@ -1,11 +1,15 @@
 // console.log('graph initidated');
 // console.log(graph_data);
+// console.log('nodes_size', nodes_size);
+// console.log('nodes_color', nodes_color);
+// console.log('edges_size', edges_size);
+// console.log('edges_color', edges_color);
 
 const data = (typeof graph_data) != 'undefined' ? graph_data : false;
-const nodes_size = (typeof nodes_size != 'undefined') ? nodes_size : 5;
-const nodes_color = (typeof nodes_color != 'undefined') ? nodes_color : '#2C7A7B';
-const edges_size = (typeof edges_size != 'undefined') ? edges_size : 2;
-const edges_color = (typeof edges_color != 'undefined') ? edges_color : '#A0AEC0';
+nodes_size = (typeof nodes_size != 'undefined') ? nodes_size : 5;
+nodes_color = (typeof nodes_color != 'undefined') ? nodes_color : '#2C7A7B';
+edges_size = (typeof edges_size != 'undefined') ? edges_size : 2;
+edges_color = (typeof edges_color != 'undefined') ? edges_color : '#A0AEC0';
 
 import * as d3 from "d3";
 
