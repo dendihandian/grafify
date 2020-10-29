@@ -1,7 +1,11 @@
 // console.log('graph initidated');
-console.log(graph_data);
+// console.log(graph_data);
 
 const data = (typeof graph_data) != 'undefined' ? graph_data : false;
+const nodes_size = (typeof nodes_size != 'undefined') ? nodes_size : 5;
+const nodes_color = (typeof nodes_color != 'undefined') ? nodes_color : '#2C7A7B';
+const edges_size = (typeof edges_size != 'undefined') ? edges_size : 2;
+const edges_color = (typeof edges_color != 'undefined') ? edges_color : '#A0AEC0';
 
 import * as d3 from "d3";
 
@@ -54,8 +58,8 @@ if (data) {
   //   const svg = d3.create("svg")
   //       .attr("viewBox", [0, 0, width, height]);
 
-    console.log('width', width);
-    console.log('height', height);
+    // console.log('width', width);
+    // console.log('height', height);
 
     const svg = d3.select("#graph-container").append("svg")
       .attr('width', width)
