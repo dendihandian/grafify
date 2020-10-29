@@ -1,32 +1,44 @@
-<form class="xl:flex" id="graph-form" method="POST" action="/graph">
+<form class="flex flex-col lg:flex-row" id="graph-form" method="POST" action="/graph">
     <div class="w-full xl:w-2/3">
-        <textarea class="w-full h-64 p-4 resize-none border rounded focus:outline-none focus:shadow-outline" name="graph_json" id="" cols="30" rows="10"></textarea>
+        <textarea class="w-full h-64 p-4 resize-none border rounded focus:outline-none focus:shadow-outline" name="graph_json" id="" cols="30" rows="10"
+            placeholder='{
+    "nodes": [
+        {"id": "A"}, {"id": "B"}, {"id": "C"}, {"id": "D"}
+    ],
+    "edges": [
+        {"source": "A", "target":"B"}, {"source": "B", "target":"C"}, {"source": "C", "target":"A"}, {"source": "C", "target":"D"}
+    ]
+}'
+        ></textarea>
     </div>
-    <div class="w-full xl:w-1/3 py-4 sm:pl-4 flex flex-col justify-center">
-        <div class="w-full my-2 flex items-center justify-center">
-            <label class="w-2/3" for="">Nodes Diameter Size:</label>
+    <div class="w-full xl:w-1/3 py-4 lg:py-0 sm:px-4 flex flex-col justify-between">
+        <div class="w-full mb-2 flex items-center justify-center">
+            <input class="w-full h-8 pl-2 border rounded focus:outline-none focus:shadow-outline" placeholder="Enter graph title" name="graph_title" type="text" value="">
+        </div>
+        <div class="w-full mb-2 flex items-center justify-center">
+            <label class="w-2/3 text-gray-600" for="">Nodes Diameter Size:</label>
             <div class="w-1/3 flex">
-                <input class="w-1/2 border border-gray-300 text-center rounded-l" type="number" min="1" max="64" value="8" name="nodes[size]" id="">
+                <input class="w-1/2 border border-gray-300 text-center rounded-l" type="number" min="1" max="64" value="8" name="nodes_size" id="">
                 <div class="w-1/2 bg-gray-800 text-center text-gray-200 rounded-r">px</div>
             </div>
         </div>
-        <div class="w-full my-2 flex items-center justify-center">
-            <label class="w-2/3" for="">Nodes Color:</label>
-            <input class="w-1/3" type="color" name="nodes[color]" id="">
+        <div class="w-full mb-2 flex items-center justify-center">
+            <label class="w-2/3 text-gray-600" for="">Nodes Color:</label>
+            <input class="w-1/3" type="color" name="nodes_color" id="">
         </div>
-        <div class="w-full my-2 flex items-center justify-center">
-            <label class="w-2/3" for="">Edges Stroke Size:</label>
+        <div class="w-full mb-2 flex items-center justify-center">
+            <label class="w-2/3 text-gray-600" for="">Edges Stroke Size:</label>
             <div class="w-1/3 flex">
-                <input class="w-1/2 border border-gray-300 text-center rounded-l" type="number" min="1" max="16" value="2" name="edges[size]" id="">
+                <input class="w-1/2 border border-gray-300 text-center rounded-l" type="number" min="1" max="16" value="2" name="edges_size" id="">
                 <div class="w-1/2 bg-gray-800 text-center text-gray-200 rounded-r">px</div>
             </div>
         </div>
-        <div class="w-full my-2 flex items-center justify-center">
-            <label class="w-2/3" for="">Edges Color:</label>
-            <input class="w-1/3 rounded" type="color" name="edges[color]" id="">
+        <div class="w-full mb-2 flex items-center justify-center">
+            <label class="w-2/3 text-gray-600" for="">Edges Color:</label>
+            <input class="w-1/3 rounded" type="color" name="edges_color" id="">
         </div>
-        <div class="w-full my-2 flex items-center justify-center">
-            <button class="w-full p-4 bg-indigo-800 rounded text-white font-bold" type="submit">Proceed</button>
+        <div class="w-full mb-2 flex items-center justify-center">
+            <button class="w-full p-4 bg-indigo-800 rounded text-white font-bold" type="submit">Grafify!</button>
         </div>
     </div>
 </form>

@@ -1,3 +1,4 @@
+import json
 from datetime import datetime
 from networkx import convert, Graph, generators
 from flask import Flask, render_template, request, jsonify
@@ -16,32 +17,25 @@ def home():
 @app.route("/graph", methods=['GET', 'POST'])
 def graph():
 
-    # data = request.get_data()
-    # # data = request.form
+    graph_data_json = request.form.get('graph_json')
+    graph_data_dict = json.loads(graph_data_json)
 
-    # print(data)
+    graph_title = request.form.get('graph_title')
+    nodes_size = request.form.get('nodes_size')
+    nodes_color = request.form.get('nodes_color')
+    edges_size = request.form.get('edges_size')
+    edges_color = request.form.get('edges_color')
 
-    # return jsonify(data)
-
-    k = generators.krackhardt_kite_graph()
-
-    graph = {
-        'nodes': [],
-        'edges': []
-    }
-
-    for node in k.nodes():
-        graph['nodes'].append({
-            'id': node
-        })
-
-    for edge in k.edges():
-        graph['edges'].append({
-            'source': edge[0],
-            'target': edge[1]
-        })
-
-    return render_template('graph.html', graph=graph, today=datetime.today())
+    return render_template('graph.html', 
+        graph=graph_data_dict,
+        graph_name=graph_title,
+        nodes_size=nodes_size,
+        nodes_color=nodes_color,
+        edges_size=edges_size,
+        edges_color=edges_color,
+        networkx=False, 
+        today=datetime.today()
+    )
 
 
 app.register_blueprint(nx_generators)

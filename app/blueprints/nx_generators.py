@@ -31,6 +31,11 @@ def nx_graph_show(graph_name):
                 'target': edge[1]
             })
 
-    return render_template('graph.html', graph=graph, graph_name=graph_name, today=datetime.today())
+    return render_template('graph.html', 
+        graph=graph, 
+        graph_name=graph_name, 
+        networkx=True,
+        today=datetime.today()
+    )
 
 

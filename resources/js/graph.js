@@ -1,5 +1,5 @@
 // console.log('graph initidated');
-// console.log(graph_data);
+console.log(graph_data);
 
 const data = (typeof graph_data) != 'undefined' ? graph_data : false;
 
