@@ -1,31 +1,29 @@
-<form class="sm:pt-8 md:pt-32 flex flex-col justify-center sm:flex-row p-8" id="graph-form" 
-{# method="POST" action="#" #}
->
-    <div class="w-full lg:w-2/3">
-        <textarea class="w-full h-64 p-4 resize-none border rounded focus:outline-none focus:shadow-outline" name="" id="" cols="30" rows="10"></textarea>
+<form class="xl:flex" id="graph-form" method="POST" action="/graph">
+    <div class="w-full xl:w-2/3">
+        <textarea class="w-full h-64 p-4 resize-none border rounded focus:outline-none focus:shadow-outline" name="graph_json" id="" cols="30" rows="10"></textarea>
     </div>
-    <div class="w-full lg:w-1/3 py-4 sm:pl-4 flex flex-col justify-center">
+    <div class="w-full xl:w-1/3 py-4 sm:pl-4 flex flex-col justify-center">
         <div class="w-full my-2 flex items-center justify-center">
             <label class="w-2/3" for="">Nodes Diameter Size:</label>
             <div class="w-1/3 flex">
-                <input class="w-1/2 border border-gray-300 text-center rounded-l" type="number" min="1" max="64" value="8" name="" id="">
+                <input class="w-1/2 border border-gray-300 text-center rounded-l" type="number" min="1" max="64" value="8" name="nodes[size]" id="">
                 <div class="w-1/2 bg-gray-800 text-center text-gray-200 rounded-r">px</div>
             </div>
         </div>
         <div class="w-full my-2 flex items-center justify-center">
             <label class="w-2/3" for="">Nodes Color:</label>
-            <input class="w-1/3" type="color" name="" id="">
+            <input class="w-1/3" type="color" name="nodes[color]" id="">
         </div>
         <div class="w-full my-2 flex items-center justify-center">
             <label class="w-2/3" for="">Edges Stroke Size:</label>
             <div class="w-1/3 flex">
-                <input class="w-1/2 border border-gray-300 text-center rounded-l" type="number" min="1" max="16" value="2" name="" id="">
+                <input class="w-1/2 border border-gray-300 text-center rounded-l" type="number" min="1" max="16" value="2" name="edges[size]" id="">
                 <div class="w-1/2 bg-gray-800 text-center text-gray-200 rounded-r">px</div>
             </div>
         </div>
         <div class="w-full my-2 flex items-center justify-center">
             <label class="w-2/3" for="">Edges Color:</label>
-            <input class="w-1/3 rounded" type="color" name="" id="">
+            <input class="w-1/3 rounded" type="color" name="edges[color]" id="">
         </div>
         <div class="w-full my-2 flex items-center justify-center">
             <button class="w-full p-4 bg-indigo-800 rounded text-white font-bold" type="submit">Proceed</button>

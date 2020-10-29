@@ -1,11 +1,5 @@
-{% extends 'layout/app.html' %}
+{% extends 'layout/app-main-center.html' %}
 
 {% block content %}
 	{% include "partials/graph-form.html" %}
-{% endblock %}
-
-{% block graph_data %}
-<script>
-	var graph_data = {{ graph|tojson|safe }}
-</script>
 {% endblock %}

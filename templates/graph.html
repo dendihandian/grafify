@@ -1,0 +1,11 @@
+{% extends 'layout/app-graph-view.html' %}
+
+{% block content %}
+	{% include "partials/graph-container.html" %}
+{% endblock %}
+
+{% block graph_data %}
+<script>
+	var graph_data = {{ graph|tojson|safe }}
+</script>
+{% endblock %}
