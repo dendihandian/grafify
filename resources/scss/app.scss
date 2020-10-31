@@ -4,7 +4,7 @@
 
 @import "tailwindcss/utilities";
 
-main {
+main > div {
   min-height: calc(100vh - 10rem);
 }
 
