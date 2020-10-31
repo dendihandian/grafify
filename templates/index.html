@@ -1,5 +1,7 @@
-{% extends 'layout/app-main-center.html' %}
+{% extends 'layout/app.html' %}
 
 {% block content %}
-	{% include "partials/graph-form.html" %}
+	<div class="px-4 sm:px-8 flex flex-col justify-center">
+		{% include "partials/graph-form.html" %}
+	</div>
 {% endblock %}

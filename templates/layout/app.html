@@ -7,15 +7,16 @@
 		<link rel="stylesheet" href="{{ url_for('static', filename= 'css/app.css') }}">
 	</head>
 	<body>
-        {% include "partials/header.html" %}
+		{% include "partials/header.html" %}
 
-		<main class="p-4 sm:p-8">
+		<main>
 			{% block content %}{% endblock %}
 		</main>
 
-        {% include "partials/footer.html" %}
+		{% include "partials/footer.html" %}
 
 		{% block graph_data %}{% endblock %}
+
 		<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 	</body>
 </html>
