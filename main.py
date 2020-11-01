@@ -1,13 +1,13 @@
 import json
 from datetime import datetime
 from networkx import convert, Graph, generators
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, flash, redirect
 
 from app.blueprints.nx_generators import nx_generators
-from config.app import APP_DEBUG
+from config.app import APP_DEBUG, APP_SECRET_KEY
 
 app = Flask(__name__)
-
+app.config['SECRET_KEY'] = APP_SECRET_KEY
 
 @app.route("/")
 def home():
@@ -18,7 +18,12 @@ def home():
 def graph():
 
     graph_data_json = request.form.get('graph_json')
-    graph_data_dict = json.loads(graph_data_json)
+
+    try:
+        graph_data_dict = json.loads(graph_data_json)
+    except:
+        flash('Invalid JSON format or syntax')
+        return redirect('/')
 
     graph_title = request.form.get('graph_title')
     nodes_size = request.form.get('nodes_size')
