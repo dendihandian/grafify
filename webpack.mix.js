@@ -22,6 +22,10 @@ mix.js('resources/js/app.js', 'static/js')
     proxy: 'http://localhost:5000'
   });
 
+if (mix.inProduction()) {
+    mix.version();
+}
+
 // Full API
 // mix.js(src, output);
 // mix.react(src, output); <-- Identical to mix.js(), but registers React Babel compilation.
