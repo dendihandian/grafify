@@ -14,6 +14,7 @@
   "author": "Dendi Handian",
   "license": "ISC",
   "devDependencies": {
+    "alpinejs": "^2.8.0",
     "browser-sync": "^2.26.13",
     "browser-sync-webpack-plugin": "2.0.1",
     "cross-env": "^7.0.2",
