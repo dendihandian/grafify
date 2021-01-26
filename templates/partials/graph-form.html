@@ -2,8 +2,7 @@
     <div class="relative w-full xl:w-2/3" x-data="{placeholder : exampleJSONGraph, graphValue: ''}">
         <button class="absolute right-0 p-2 text-white bg-teal-700 rounded-bl focus:outline-none" x-show="graphValue.length < 1" @click="graphValue = placeholder" type="button" >Use Example</button>
         <textarea class="w-full h-64 p-4 text-teal-700 placeholder-gray-500 border border-teal-700 rounded resize-none focus:outline-none focus:shadow-outline" name="graph_json" id="" cols="30" rows="10" required
-            :placeholder="placeholder"
-        x-html="graphValue"></textarea>
+            :placeholder="placeholder" x-model="graphValue"></textarea>
         {% with messages = get_flashed_messages(with_categories=true) %}
             {% if messages %}
                 {% for message in messages %}
