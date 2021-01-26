@@ -4,8 +4,8 @@ module.exports = {
     // purgeLayersByDefault: true,
   },
   purge: {
-    layers: ['components', 'utilities'],
-    content: ['./templates/**/*.html']
+    // layers: ['components', 'utilities'],
+    // content: ['./templates/**/*.html']
   },
   theme: {
     extend: {},

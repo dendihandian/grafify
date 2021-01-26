@@ -17,6 +17,48 @@
 
 		{% block graph_data %}{% endblock %}
 
+		<script>
+
+			var exampleGraph = {
+				nodes: [
+					{
+						id: 'A'
+					},
+					{
+						id: 'B'
+					},
+					{
+						id: 'C'
+					},
+					{
+						id: 'D'
+					}
+				],
+				edges: [
+					{
+						source: 'A',
+						target: 'B',
+					},
+					{
+						source: 'B',
+						target: 'C',
+					},
+					{
+						source: 'C',
+						target: 'A',
+					},
+					{
+						source: 'C',
+						target: 'D',
+					}
+				]
+			}
+
+
+		var exampleJSONGraph = JSON.stringify(exampleGraph, null, 2);
+
+		</script>
+
 		<script src="{{ url_for('static', filename='js/app.js') }}"></script>
 	</body>
 </html>
