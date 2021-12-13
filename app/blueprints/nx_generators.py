@@ -5,11 +5,11 @@ from app.blueprints.graph_selector import graph_selector
 nx_generators = Blueprint('nx_generators', __name__,
                         template_folder='templates')
 
-@nx_generators.route('/networkx/generators')
+@nx_generators.route('/networkx-graphs')
 def nx_graph_list():
-    return render_template('nx/index.html', today=datetime.today())
+    return render_template('networkx-graphs.html', today=datetime.today())
 
-@nx_generators.route('/networkx/generators/<graph_name>')
+@nx_generators.route('/networkx-graphs/<graph_name>')
 def nx_graph_show(graph_name):
 
     graph = {
@@ -31,10 +31,10 @@ def nx_graph_show(graph_name):
                 'target': edge[1]
             })
 
-    return render_template('graph.html', 
-        graph=graph, 
-        graph_name=graph_name, 
-        networkx=True,
+    return render_template('result.html',
+        graph=graph,
+        graph_name=graph_name,
+        # networkx=True,
         today=datetime.today()
     )
 

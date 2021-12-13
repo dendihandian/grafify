@@ -1,0 +1,40 @@
+{% extends 'layout/app.html' %}
+
+{% block content %}
+    <div class="flex flex-col justify-center w-full px-10 mx-auto sm:px-0 sm:w-1/2 sm:flex-row">
+        <div class="w-full sm:w-1/2">
+            <h3 class="font-bold">Small</h3>
+            <ul class="pt-2 pl-4 list-disc">
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/bull_graph">{{ 'bull_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/chvatal_graph">{{ 'chvatal_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/cubical_graph">{{ 'cubical_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/desargues_graph">{{ 'desargues_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/diamond_graph">{{ 'diamond_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/dodecahedral_graph">{{ 'dodecahedral_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/frucht_graph">{{ 'frucht_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/heawood_graph">{{ 'heawood_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/hoffman_singleton_graph">{{ 'hoffman_singleton_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/house_x_graph">{{ 'house_x_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/icosahedral_graph">{{ 'icosahedral_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/krackhardt_kite_graph">{{ 'krackhardt_kite_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/moebius_kantor_graph">{{ 'moebius_kantor_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/octahedral_graph">{{ 'octahedral_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/pappus_graph">{{ 'pappus_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/sedgewick_maze_graph">{{ 'sedgewick_maze_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/tetrahedral_graph">{{ 'tetrahedral_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/truncated_cube_graph">{{ 'truncated_cube_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/truncated_tetrahedron_graph">{{ 'truncated_tetrahedron_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/tutte_graph">{{ 'tutte_graph'|replace('_', ' ') }}</a></li>
+            </ul>
+        </div>
+        <div class="w-full mt-4 sm:w-1/2 sm:mt-0">
+            <h3 class="font-bold">Social</h3>
+            <ul class="pt-2 pl-4 list-disc">
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/karate_club_graph">{{ 'karate_club_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/davis_southern_women_graph">{{ 'davis_southern_women_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/florentine_families_graph">{{ 'florentine_families_graph'|replace('_', ' ') }}</a></li>
+                <li><a class="hover:text-teal-700" href="/networkx-graphs/les_miserables_graph">{{ 'les_miserables_graph'|replace('_', ' ') }}</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

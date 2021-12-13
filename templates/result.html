@@ -1,10 +1,11 @@
 {% extends 'layout/app.html' %}
 
 {% block content %}
-	<div class="flex flex-col w-full">
+	<div class="mx-auto">
 		<div class="w-full mx-auto border border-gray-200 rounded" id="graph-container"></div>
-		<div class="flex justify-center w-full py-2">
-			<a class="px-4 py-2 text-sm text-white rounded from-teal-500 to-green-500 bg-gradient-to-r" type="button" href="/">Back to form</a>
+		<div class="flex flex-col items-center justify-center w-full py-2 sm:flex-row">
+			<a class="w-32 px-4 py-2 text-sm text-center text-white rounded from-teal-500 to-green-500 bg-gradient-to-r" type="button" href="/">Back to form</a>
+			<a class="w-64 px-4 py-2 mt-4 text-sm text-center text-white rounded sm:mt-0 sm:ml-2 from-teal-500 to-green-500 bg-gradient-to-r" type="button" href="/networkx-graphs">Explore NetworkX Graphs</a>
 		</div>
 	</div>
 {% endblock %}

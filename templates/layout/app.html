@@ -9,17 +9,18 @@
 </head>
     <body>
         <div class="flex flex-col min-h-screen bg-white">
-            <header class="text-gray-600 body-font">
-                <div class="container flex flex-col flex-wrap items-center px-10 py-8 md:flex-row">
-                    <Link href="/">
-                        <a class="flex items-center mb-4 font-medium text-white title-font md:mb-0">
-                            <span class="text-3xl text-transparent bg-gradient-to-r bg-clip-text from-teal-500 to-green-500">Grafify</span>
-                        </a>
-                    </Link>
+            <header class="flex items-center justify-center px-10 py-5 sm:justify-between">
+                <div class="block">
+                    <a href="/">
+                        <span class="text-3xl font-bold text-transparent bg-gradient-to-r bg-clip-text from-teal-500 to-green-500">Grafify</span>
+                    </a>
+                </div>
+                <div class="hidden sm:block">
+                    <a href="/networkx-graphs">NetworkX Graphs</a>
                 </div>
             </header>
 
-            <main class="flex items-center flex-grow px-10">
+            <main class="flex items-center flex-grow sm:px-10">
                 {% block content %}{% endblock %}
             </main>
 
