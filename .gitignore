@@ -8,3 +8,4 @@ yarn-error.log
 
 static/css/app.css
 static/js/app.js
+static/mix-manifest.json

@@ -1,0 +1,20 @@
+{% extends 'layout/app.html' %}
+
+{% block content %}
+	<div class="flex flex-col w-full">
+		<div class="w-full mx-auto border border-gray-200 rounded" id="graph-container"></div>
+		<div class="flex justify-center w-full py-2">
+			<a class="px-4 py-2 text-sm text-white rounded from-teal-500 to-green-500 bg-gradient-to-r" type="button" href="/">Back to form</a>
+		</div>
+	</div>
+{% endblock %}
+
+{% block prescript %}
+<script>
+	// var nodes_size = "{{ nodes_size }}";
+	// var nodes_color = "{{ nodes_color }}";
+	// var edges_size = "{{ edges_size }}";
+	// var edges_color = "{{ edges_color }}";
+	var graph_data = {{ graph|tojson|safe }};
+</script>
+{% endblock %}
