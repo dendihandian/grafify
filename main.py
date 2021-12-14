@@ -3,7 +3,7 @@ from datetime import datetime
 from networkx import convert, Graph, generators
 from flask import Flask, render_template, request, jsonify, flash, redirect
 
-from app.blueprints.nx_generators import nx_generators
+from app.blueprints.networkx_blueprint import networkx_blueprint
 from config.app import APP_DEBUG, APP_SECRET_KEY
 
 app = Flask(__name__)
@@ -44,7 +44,7 @@ def result():
     )
 
 
-app.register_blueprint(nx_generators)
+app.register_blueprint(networkx_blueprint)
 
 if __name__ == "__main__":
     app.run(debug=APP_DEBUG)
