@@ -62,6 +62,8 @@ def nx_graph_result(graph_name):
     return render_template('result.html',
         graph=graph,
         graph_name=graph_name,
+        nodes_color="#14B8A6",
+        edges_color="#16A34A",
         today=datetime.today()
     )
 

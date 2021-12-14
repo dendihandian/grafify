@@ -1,8 +1,6 @@
 const data = (typeof graph_data) != 'undefined' ? graph_data : false;
 const nodes_size = (typeof nodes_size) != 'undefined' ? nodes_size : 5;
-const nodes_color = (typeof nodes_color) != 'undefined' ? nodes_color : '#14B8A6';
 const edges_size = (typeof edges_size) != 'undefined' ? edges_size : 2;
-const edges_color = (typeof edges_color) != 'undefined' ? edges_color : '#16A34A';
 
 import * as d3 from "d3";
 

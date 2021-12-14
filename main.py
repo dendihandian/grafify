@@ -26,20 +26,19 @@ def result():
         return redirect('/')
 
 
-    # graph_title = request.form.get('graph_title')
+    graph_name = request.form.get('graph_name')
+    nodes_color = request.form.get('nodes_color')
+    edges_color = request.form.get('edges_color')
     # nodes_size = request.form.get('nodes_size')
-    # nodes_color = request.form.get('nodes_color')
     # edges_size = request.form.get('edges_size')
-    # edges_color = request.form.get('edges_color')
 
-    return render_template('result.html', 
+    return render_template('result.html',
         graph=graph_data_dict,
-        # graph_name=graph_title,
+        graph_name=graph_name,
+        nodes_color=nodes_color,
+        edges_color=edges_color,
         # nodes_size=nodes_size,
-        # nodes_color=nodes_color,
         # edges_size=edges_size,
-        # edges_color=edges_color,
-        networkx=False, 
         today=datetime.today()
     )
 

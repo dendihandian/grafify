@@ -4,6 +4,9 @@
 	<div class="mx-auto">
 		<div class="w-full mx-auto border border-gray-200 rounded" id="graph-container"></div>
 		<div class="flex flex-col items-center justify-center w-full py-2 sm:flex-row">
+			<h3>{{ graph_name }}</h3>
+		</div>
+		<div class="flex flex-col items-center justify-end w-full py-2 sm:flex-row">
 			<a class="px-4 py-2 ml-2 text-sm text-gray-500 bg-transparent border border-gray-500 rounded" href="/">Back to Form</a>
 			<a class="w-64 px-4 py-2 mt-4 text-sm text-center text-white rounded sm:mt-0 sm:ml-2 from-teal-500 to-green-500 bg-gradient-to-r" type="button" href="/networkx-graphs">Explore NetworkX Graphs</a>
 		</div>
@@ -13,9 +16,9 @@
 {% block prescript %}
 <script>
 	// var nodes_size = "{{ nodes_size }}";
-	// var nodes_color = "{{ nodes_color }}";
 	// var edges_size = "{{ edges_size }}";
-	// var edges_color = "{{ edges_color }}";
+	var edges_color = "{{ edges_color }}";
+	var nodes_color = "{{ nodes_color }}";
 	var graph_data = {{ graph|tojson|safe }};
 </script>
 {% endblock %}
