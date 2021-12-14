@@ -3,13 +3,14 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  purge: {
-    layers: ['components', 'utilities'],
-    content: ['./templates/**/*.html']
-  },
+  content: [
+    './templates/**/*.html'
+  ],
   theme: {
     extend: {},
   },
   variants: {},
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+  ],
 }
