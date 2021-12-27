@@ -56,5 +56,13 @@
         <script data-mainscript src="{{ url_for('static', filename='js/app.js') }}"></script>
         {% block postscript %}{% endblock %}
 
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LQWK6H4SYW"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-LQWK6H4SYW');
+        </script>
     </body>
 </html>
