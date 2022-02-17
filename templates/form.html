@@ -1,7 +1,16 @@
 {% extends 'layout/app.html' %}
 
 {% block content %}
-	<form class="flex flex-col items-center w-full md:flex-row" x-data="{placeholderGraphValue: exampleGraphValue, graphValue: $persist('').as('graphValue'), graphName: $persist('').as('graphName'), nodesColor: $persist('#14B8A6').as('nodesColor'), edgesColor: $persist('#16A34A').as('edgesColor')}" id="graph-form" method="POST" action="/result">
+	<form class="flex flex-col items-center w-full md:flex-row" 
+		x-data="{
+			placeholderGraphValue: exampleGraphValue, 
+			graphValue: $persist('').as('graphValue'), 
+			graphName: $persist('').as('graphName'), 
+			nodesColor: $persist('#14B8A6').as('nodesColor'), 
+			edgesColor: $persist('#16A34A').as('edgesColor'), 
+			centrality: $persist('no_centrality').as('centrality')
+		}" 
+		id="graph-form" method="POST" action="/result">
 		<div class="relative w-full px-4 sm:px-0 md:w-2/3">
 			<textarea class="w-full p-4 border border-green-600 rounded resize-none h-96 focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50" x-model="graphValue" name="graph_json" id="" cols="30" rows="10"></textarea>
 			<button class="absolute right-0 p-2 text-sm text-white bg-green-500 rounded-bl hover:bg-green-700" @click="graphValue = exampleGraphValue" x-show="graphValue.length < 1" tabindex="0" type="button">Use Example</button>
@@ -19,6 +28,20 @@
 				<div class="block w-1/2 mt-4">
 					<span class="text-xs text-gray-700">Edges color</span>
 					<input class="block w-full rounded outline-none focus:border-green-300 focus:ring focus:ring-green-200" type="color" name="edges_color" id="edges_color" x-model="edgesColor">
+				</div>
+			</div>
+			<div class="flex flex-col w-full my-2">
+				<div class="w-full">
+					<input class="text-green-500 form-radio" type="radio" name="centrality" id="centrality" value="no_centrality" x-model="centrality"> No Centrality
+				</div>
+				<div class="w-full">
+					<input class="text-green-500 form-radio" type="radio" name="centrality" id="centrality" value="degree_centrality" x-model="centrality"> Degree Centrality
+				</div>
+				<div class="w-full">
+					<input class="text-green-500 form-radio" type="radio" name="centrality" id="centrality" value="closeness_centrality" x-model="centrality"> Closeness Centrality
+				</div>
+				<div class="w-full">
+					<input class="text-green-500 form-radio" type="radio" name="centrality" id="centrality" value="eigenvector_centrality" x-model="centrality"> Eigenvector Centrality
 				</div>
 			</div>
 			<div class="block w-full mt-4 text-center">

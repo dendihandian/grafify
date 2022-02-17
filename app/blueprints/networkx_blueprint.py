@@ -1,6 +1,7 @@
 from flask import Blueprint, render_template
 from datetime import datetime
 from app.utilities.graph_selector import graph_selector
+from networkx import degree_centrality
 
 networkx_blueprint = Blueprint('networkx_blueprint', __name__,
                         template_folder='templates')
@@ -46,6 +47,8 @@ def nx_graph_result(graph_name):
     }
 
     nx_graph = graph_selector(graph_name)
+
+    # graph['degree_centrality'] = degree_centrality(nx_graph)
 
     if (nx_graph):
         for node in nx_graph.nodes():
