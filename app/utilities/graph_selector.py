@@ -1,67 +1,55 @@
 from networkx import generators
 
-def graph_selector(graph):
+"""
+    NetworkX Generator Graphs: https://networkx.org/documentation/stable/reference/generators.html
+"""
+
+def graph_selector(graph_name, request_parameters = {}):
     nx_graph = None
 
-    if (graph == ''):
+    if (graph_name == ''):
         return None
 
-    # Small Networks
-    elif (graph == 'bull_graph'):
-        nx_graph = generators.bull_graph()
-    elif (graph == 'chvatal_graph'):
-        nx_graph = generators.chvatal_graph()
-    elif (graph == 'cubical_graph'):
-        nx_graph = generators.cubical_graph()
-    elif (graph == 'desargues_graph'):
-        nx_graph = generators.desargues_graph()
-    elif (graph == 'diamond_graph'):
-        nx_graph = generators.diamond_graph()
-    elif (graph == 'dodecahedral_graph'):
-        nx_graph = generators.dodecahedral_graph()
-    elif (graph == 'frucht_graph'):
-        nx_graph = generators.frucht_graph()
-    elif (graph == 'heawood_graph'):
-        nx_graph = generators.heawood_graph()
-    elif (graph == 'hoffman_singleton_graph'):
-        nx_graph = generators.hoffman_singleton_graph()
-    elif (graph == 'house_x_graph'):
-        nx_graph = generators.house_x_graph()
-    elif (graph == 'icosahedral_graph'):
-        nx_graph = generators.icosahedral_graph()
-    elif (graph == 'krackhardt_kite_graph'):
-        nx_graph = generators.krackhardt_kite_graph()
-    elif (graph == 'moebius_kantor_graph'):
-        nx_graph = generators.moebius_kantor_graph()
-    elif (graph == 'octahedral_graph'):
-        nx_graph = generators.octahedral_graph()
-    elif (graph == 'pappus_graph'):
-        nx_graph = generators.pappus_graph()
-    elif (graph == 'sedgewick_maze_graph'):
-        nx_graph = generators.sedgewick_maze_graph()
-    elif (graph == 'tetrahedral_graph'):
-        nx_graph = generators.tetrahedral_graph()
-    elif (graph == 'truncated_cube_graph'):
-        nx_graph = generators.truncated_cube_graph()
-    elif (graph == 'truncated_tetrahedron_graph'):
-        nx_graph = generators.truncated_tetrahedron_graph()
-    elif (graph == 'tutte_graph'):
-        nx_graph = generators.tutte_graph()
+    generator_graphs = {
 
-    # Social Networks
-    elif (graph == 'karate_club_graph'):
-        nx_graph = generators.karate_club_graph()
-    elif (graph == 'davis_southern_women_graph'):
-        nx_graph = generators.davis_southern_women_graph()
-    elif (graph == 'florentine_families_graph'):
-        nx_graph = generators.florentine_families_graph()
-    elif (graph == 'les_miserables_graph'):
-        nx_graph = generators.les_miserables_graph()
+        # small networks
+        "bull_graph" : generators.bull_graph(),
+        "chvatal_graph" : generators.chvatal_graph(),
+        "cubical_graph" : generators.cubical_graph(),
+        "desargues_graph" : generators.desargues_graph(),
+        "diamond_graph" : generators.diamond_graph(),
+        "dodecahedral_graph" : generators.dodecahedral_graph(),
+        "frucht_graph" : generators.frucht_graph(),
+        "heawood_graph" : generators.heawood_graph(),
+        "hoffman_singleton_graph" : generators.hoffman_singleton_graph(),
+        "house_x_graph" : generators.house_x_graph(),
+        "icosahedral_graph" : generators.icosahedral_graph(),
+        "krackhardt_kite_graph" : generators.krackhardt_kite_graph(),
+        "moebius_kantor_graph" : generators.moebius_kantor_graph(),
+        "octahedral_graph" : generators.octahedral_graph(),
+        "pappus_graph" : generators.pappus_graph(),
+        "sedgewick_maze_graph" : generators.sedgewick_maze_graph(),
+        "tetrahedral_graph" : generators.tetrahedral_graph(),
+        "truncated_cube_graph" : generators.truncated_cube_graph(),
+        "truncated_tetrahedron_graph" : generators.truncated_tetrahedron_graph(),
+        "tutte_graph" : generators.tutte_graph(),
 
-    # else
-    else:
-        nx_graph = None
+        # social networks
+        "karate_club_graph" : generators.karate_club_graph(),
+        "davis_southern_women_graph" : generators.davis_southern_women_graph(),
+        "florentine_families_graph" : generators.florentine_families_graph(),
+        "les_miserables_graph" : generators.les_miserables_graph(),
 
-    print(nx_graph)
+        # others
+        "caveman_graph" : generators.caveman_graph(l=2, k=3),
+        "graph_atlas_g" : generators.graph_atlas_g()[0],
+
+    }
+
+    try:
+        nx_graph = generator_graphs[graph_name]
+    except:
+        pass
+
 
     return nx_graph

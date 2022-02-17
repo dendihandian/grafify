@@ -1,6 +1,6 @@
 import json
 from datetime import datetime
-from networkx import convert, Graph, generators
+from networkx import Graph, degree_centrality, closeness_centrality, eigenvector_centrality
 from flask import Flask, render_template, request, jsonify, flash, redirect
 
 from app.blueprints.networkx_blueprint import networkx_blueprint
@@ -17,6 +17,7 @@ def home():
 @app.route("/result", methods=['GET', 'POST'])
 def result():
 
+    centrality = request.form.get('centrality')
     graph_data_json = request.form.get('graph_json')
 
     try:
@@ -24,6 +25,18 @@ def result():
     except:
         flash('Invalid JSON format or syntax')
         return redirect('/')
+
+    if (centrality in ['degree_centrality', 'closeness_centrality', 'eigenvector_centrality']):
+        nx_graph = Graph()
+        nx_graph.add_nodes_from([d['id'] for d in graph_data_dict['nodes']])
+        nx_graph.add_edges_from([(d['source'], d['target']) for d in graph_data_dict['edges']])
+
+        if (centrality == 'degree_centrality'):
+            graph_data_dict['centrality'] = degree_centrality(nx_graph)
+        elif (centrality == 'closeness_centrality'):
+            graph_data_dict['centrality'] = closeness_centrality(nx_graph)
+        elif (centrality == 'eigenvector_centrality'):
+            graph_data_dict['centrality'] = eigenvector_centrality(nx_graph)
 
 
     graph_name = request.form.get('graph_name')

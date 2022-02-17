@@ -60,9 +60,16 @@ if (data) {
         .selectAll("circle")
         .data(nodes)
         .join("circle")
-        .attr("r", nodes_size)
-        .attr("fill", nodes_color)
-        .call(drag(simulation));
+        .attr("fill", nodes_color);
+
+
+    if (graph_data['centrality']) {
+        node.attr("r", d => nodes_size + (graph_data['centrality'][d.id] * 10))
+    } else {
+        node.attr("r", nodes_size)
+    }
+
+    node.call(drag(simulation));
 
     node.append("title")
         .text(d => d.id);
