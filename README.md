@@ -1,13 +1,15 @@
 # Grafify
 
-An online app for viewing json graph
+A JSON graph viewer based on D3.js and NetworkX
 
-## Requirements
+## Development
+### Requirements
 
+- Python 3.8+ (3.9 Recommended) 
 - Poetry
 - Node 14+ and NPM
 
-## The Development Setup
+### The Development Setup
 
 1. run `poetry install`
 2. duplicate `env.example` to `.env`
@@ -16,7 +18,7 @@ An online app for viewing json graph
 5. run `npm run development`
 6. run `poetry run python -m flask run`
 
-## Build For Deployment
+### Build For Deployment
 
 ```
 npm run production
