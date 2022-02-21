@@ -36,7 +36,7 @@ if (data) {
     let width = screen.width * 0.95;
     let height = screen.height * 0.55;
 
-    if (is_graph_page) {
+    if (is_graph_page && screen.width > 768) {
         width = screen.width * 0.45;
         height = screen.height * 0.30;
     }
