@@ -15,10 +15,8 @@
 
 {% block prescript %}
 <script>
-	// var nodes_size = "{{ nodes_size }}";
-	// var edges_size = "{{ edges_size }}";
-	var edges_color = "{{ edges_color }}";
-	var nodes_color = "{{ nodes_color }}";
-	var graph_data = {{ graph|tojson|safe }};
+	var t_edges_color = "{{ edges_color }}";
+	var t_nodes_color = "{{ nodes_color }}";
+	var t_graph_data = {{ graph|tojson|safe }};
 </script>
 {% endblock %}

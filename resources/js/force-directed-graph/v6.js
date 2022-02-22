@@ -1,6 +1,9 @@
-const data = (typeof graph_data) != 'undefined' ? graph_data : false;
-const nodes_size = (typeof nodes_size) != 'undefined' ? nodes_size : 5;
-const edges_size = (typeof edges_size) != 'undefined' ? edges_size : 2;
+const data = (typeof t_graph_data) != 'undefined' ? t_graph_data : false;
+const is_graph_page = (typeof t_is_graph_page) != 'undefined' ? t_is_graph_page : false;
+const nodes_color = (typeof t_nodes_color) != 'undefined' ? t_nodes_color : "#14B8A6";
+const edges_color = (typeof t_edges_color) != 'undefined' ? t_edges_color : "#16A34A";
+const nodes_size = (typeof t_nodes_size) != 'undefined' ? t_nodes_size : 5;
+const edges_size = (typeof t_edges_size) != 'undefined' ? t_edges_size : 2;
 
 import * as d3 from "d3";
 
@@ -30,8 +33,13 @@ if (data) {
         return d => scale(d.group);
     }
 
-    const width = screen.width * 0.95;
-    const height = screen.height * 0.55;
+    let width = screen.width * 0.95;
+    let height = screen.height * 0.55;
+
+    if (is_graph_page && screen.width > 768) {
+        width = screen.width * 0.45;
+        height = screen.height * 0.30;
+    }
 
     const links = data.edges.map(d => Object.create(d));
     const nodes = data.nodes.map(d => Object.create(d));
@@ -63,8 +71,8 @@ if (data) {
         .attr("fill", nodes_color);
 
 
-    if (graph_data['centrality']) {
-        node.attr("r", d => nodes_size + (graph_data['centrality'][d.id] * 10))
+    if (data['centrality']) {
+        node.attr("r", d => nodes_size + (data['centrality'][d.id] * 10))
     } else {
         node.attr("r", nodes_size)
     }
