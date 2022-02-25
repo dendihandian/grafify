@@ -5,14 +5,19 @@
 		x-data="{
 			placeholderGraphValue: exampleGraphValue, 
 			graphValue: $persist('').as('graphValue'), 
-			graphName: $persist('').as('graphName'), 
+			graphName: $persist('Grafify Example').as('graphName'), 
 			nodesColor: $persist('#14B8A6').as('nodesColor'), 
 			edgesColor: $persist('#16A34A').as('edgesColor'), 
 			centrality: $persist('no_centrality').as('centrality')
 		}" 
 		id="graph-form" method="POST" action="/result">
 		<div class="relative w-full px-4 sm:px-0 md:w-2/3">
-			<textarea class="w-full p-4 border border-green-600 rounded resize-none h-96 focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50" x-model="graphValue" name="graph_json" id="" cols="30" rows="10"></textarea>
+			<textarea
+				class="w-full p-4 border border-green-600 rounded resize-none scrollbar-hide md:scrollbar-default h-96 focus:border-green-300 focus:ring focus:ring-green-200 focus:ring-opacity-50" 
+				x-model="graphValue" 
+				name="graph_json" id="graph_json" cols="30" rows="10"
+				:placeholder="placeholderGraphValue"
+			></textarea>
 			<button class="absolute right-0 p-2 text-sm text-white bg-green-500 rounded-bl hover:bg-green-700" @click="graphValue = exampleGraphValue" x-show="graphValue.length < 1" tabindex="0" type="button">Use Example</button>
 		</div>
 		<div class="flex flex-col justify-center w-full px-4 mt-4 md:w-1/3 md:mt-0">
@@ -55,36 +60,56 @@
 <script data-prescript>
 	var exampleGraph = {
 		nodes: [
-			{
-				id: 'A'
-			},
-			{
-				id: 'B'
-			},
-			{
-				id: 'C'
-			},
-			{
-				id: 'D'
-			}
+			{id: 'Jon Snow'},
+			{id: 'Ygritte'},
+			{id: 'Arya Stark'},
+			{id: 'Bran Stark'},
+			{id: 'Rob Stark'},
+			{id: 'Ned Stark'},
+			{id: 'Sansa Stark'},
+			{id: 'Tyrion Lannister'},
+			{id: 'Jaime Lannister'},
+			{id: 'Cersei Lannister'},
+			{id: 'Daenerys Targaryen'},
+			{id: 'Theon Greyjoy'},
+			{id: 'Khal Drogo'},
+			{id: 'Jorah Mormont'},
+			{id: 'Joffrey Baratheon'},
+			{id: 'Samwell Tarly'},
 		],
 		edges: [
-			{
-				source: 'A',
-				target: 'B',
-			},
-			{
-				source: 'B',
-				target: 'C',
-			},
-			{
-				source: 'C',
-				target: 'A',
-			},
-			{
-				source: 'C',
-				target: 'D',
-			}
+			{source: 'Jon Snow', target: 'Arya Stark'},
+			{source: 'Jon Snow', target: 'Sansa Stark'},
+			{source: 'Jon Snow', target: 'Bran Stark'},
+			{source: 'Jon Snow', target: 'Ygritte'},
+			{source: 'Jon Snow', target: 'Samwell Tarly'},
+			{source: 'Jon Snow', target: 'Daenerys Targaryen'},
+			{source: 'Jon Snow', target: 'Tyrion Lannister'},
+			{source: 'Arya Stark', target: 'Bran Stark'},
+			{source: 'Samwell Tarly', target: 'Bran Stark'},
+			{source: 'Arya Stark', target: 'Cersei Lannister'},
+			{source: 'Sansa Stark', target: 'Bran Stark'},
+			{source: 'Sansa Stark', target: 'Arya Stark'},
+			{source: 'Sansa Stark', target: 'Rob Stark'},
+			{source: 'Sansa Stark', target: 'Theon Greyjoy'},
+			{source: 'Rob Stark', target: 'Jon Snow'},
+			{source: 'Ned Stark', target: 'Jon Snow'},
+			{source: 'Ned Stark', target: 'Bran Stark'},
+			{source: 'Ned Stark', target: 'Arya Stark'},
+			{source: 'Ned Stark', target: 'Sansa Stark'},
+			{source: 'Ned Stark', target: 'Jaime Lannister'},
+			{source: 'Tyrion Lannister', target: 'Sansa Stark'},
+			{source: 'Tyrion Lannister', target: 'Jaime Lannister'},
+			{source: 'Tyrion Lannister', target: 'Cersei Lannister'},
+			{source: 'Tyrion Lannister', target: 'Daenerys Targaryen'},
+			{source: 'Jaime Lannister', target: 'Cersei Lannister'},
+			{source: 'Jaime Lannister', target: 'Bran Stark'},
+			{source: 'Daenerys Targaryen', target: 'Khal Drogo'},
+			{source: 'Daenerys Targaryen', target: 'Jorah Mormont'},
+			{source: 'Joffrey Baratheon', target: 'Sansa Stark'},
+			{source: 'Joffrey Baratheon', target: 'Cersei Lannister'},
+			{source: 'Joffrey Baratheon', target: 'Jaime Lannister'},
+			{source: 'Joffrey Baratheon', target: 'Tyrion Lannister'},
 		]
 	}
 
